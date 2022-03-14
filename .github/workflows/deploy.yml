@@ -18,7 +18,7 @@ jobs:
       - name: Install packages
         run: npm ci
       - name: Build project
-        run: ng build --base-href /planets-facts/
+        run: npm run build -- --base-href /planets-facts/
       - name: Add .nojekyll file
         run: touch ./dist/planets-facts/.nojekyll
       - name: Deploy
