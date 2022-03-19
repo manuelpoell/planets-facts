@@ -1,0 +1,14 @@
+<div class="nav-bar">
+  <span class="nav-bar-title">THE PLANETS</span>
+  <div class="elements-container">
+    <span
+      *ngFor="let element of elements; let i = index;"
+      class="element"
+      [attr.active]="active.name === element"
+      [ngStyle]="{'border-bottom-color': active.color}"
+      (click)="elementClicked(element)"
+    >
+      {{ element }}
+    </span>
+  </div>
+</div>

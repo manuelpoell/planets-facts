@@ -1,0 +1,11 @@
+<div class="button-group">
+  <div
+    *ngFor="let button of buttons; let i = index"
+    class="action-button"
+    (click)="onClick(i)"
+    [ngStyle]="button.active ? {'background-color': activeColor, 'border': 'none'} : {}"
+  >
+    <span class="button-prefix">{{ i + 1 | number: '2.0-0' }}</span>
+    <span class="button-label">{{ button.label }}</span>
+  </div>
+</div>

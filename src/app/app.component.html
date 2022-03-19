@@ -1,4 +1,2 @@
-<h1>DONEC JUSTO EGET</h1>
-<h2>FELIS FACILISIS FERMENTUM</h2>
-<h3>ALIQUAM PORTTITOR MAURIS SIT AMET ORCI</h3>
-<h4>AENEAN DIGNISSIM PELLENTESQUE FELIS</h4>
+<navigation-bar [elements]="navBarElements" [active]="activePlanet" (selectionChange)="planetSelect($event)"></navigation-bar>
+<mp-footer [active]="activePlanet"></mp-footer>

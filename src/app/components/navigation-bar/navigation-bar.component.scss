@@ -1,0 +1,44 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  padding: 0 30px;
+  border-bottom: 1px solid #979797;
+
+  > .nav-bar-title {
+    font-family: Antonio, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -1.05px;
+  }
+
+  > .elements-container {
+    display: flex;
+    gap: 30px;
+
+    > .element {
+      font-family: Spartan, sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 11px;
+      line-height: 25px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #838391;
+      border-top: 3px solid transparent;
+
+      &[active="true"] {
+        border-bottom: 3px solid;
+        color: #ffffff;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: #ffffff;
+      }
+    }
+  }
+}

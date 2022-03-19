@@ -1,0 +1,33 @@
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+  font-family: Spartan, sans-serif;
+  font-weight: 700;
+
+  > .action-button {
+    width: 350px;
+    height: 48px;
+    border: 1px solid #38384f;
+    display: flex;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #38384f;
+    }
+
+    > .button-prefix {
+      color: #838391;
+      width: 20%;
+      text-align: center;
+      align-self: center;
+    }
+
+    > .button-label {
+      width: 80%;
+      align-self: center;
+      letter-spacing: 2px;
+    }
+  }
+}
