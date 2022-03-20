@@ -1,14 +1,14 @@
 <div class="nav-bar">
   <span class="nav-bar-title">THE PLANETS</span>
-  <div class="elements-container">
-    <span
-      *ngFor="let element of elements; let i = index;"
-      class="element"
+  <div *ngIf="windowWidth >= 700" class="elements-container">
+    <h4
+      *ngFor="let element of navBarElements; let i = index;"
       [attr.active]="active.name === element"
       [ngStyle]="{'border-bottom-color': active.color}"
       (click)="elementClicked(element)"
     >
       {{ element }}
-    </span>
+    </h4>
   </div>
+  <img *ngIf="windowWidth < 700" src="/assets/images/icon-hamburger.svg" [ngStyle]="menuIsOpen ? {'opacity': '50%'} : {}" (click)="triggerMenu()" />
 </div>

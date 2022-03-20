@@ -1,2 +1,4 @@
-<navigation-bar [elements]="navBarElements" [active]="activePlanet" (selectionChange)="planetSelect($event)"></navigation-bar>
-<mp-footer [active]="activePlanet"></mp-footer>
+<navigation-bar [elements]="navBarElements" [active]="activePlanet" (selectionChange)="planetSelect($event)" (openMenu)="openMenu()"></navigation-bar>
+<mobile-menu *ngIf="menuOpen" [elements]="navBarElements" [active]="activePlanet" (selectionChange)="planetSelect($event)"></mobile-menu>
+<planet-info *ngIf="!menuOpen" [active]="activePlanet"></planet-info>
+<mp-footer *ngIf="!menuOpen" [active]="activePlanet"></mp-footer>

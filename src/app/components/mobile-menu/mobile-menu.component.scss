@@ -1,0 +1,34 @@
+.menu-option {
+  width: 90%;
+  height: 70px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > .planet {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    > .planet-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+    }
+
+    > .planet-name {
+      text-transform: uppercase;
+      font-family: Spartan, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 15px;
+      line-height: 25px;
+      letter-spacing: 1.36px;
+    }
+  }
+}
+
+.menu-option + .menu-option {
+  border-top: 1px solid #ffffff33;
+}

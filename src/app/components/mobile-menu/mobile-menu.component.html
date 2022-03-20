@@ -1,0 +1,7 @@
+<div *ngFor="let element of elements" class="menu-option" (click)="elementClicked(element.name)">
+  <div class="planet">
+    <div class="planet-color" [ngStyle]="{'background-color': element.color}"></div>
+    <span class="planet-name">{{ element.name }}</span>
+  </div>
+  <img src="/assets/images/icon-chevron.svg" />
+</div>

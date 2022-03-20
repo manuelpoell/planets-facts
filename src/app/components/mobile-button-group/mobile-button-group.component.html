@@ -1,0 +1,10 @@
+<div class="button-group">
+  <div
+    *ngFor="let button of buttons; let i = index"
+    class="action-button"
+    (click)="onClick(i)"
+    [ngStyle]="button.active ? {'border-bottom-color': activeColor, 'color': '#ffffff'} : {}"
+  >
+    {{ button.label }}
+  </div>
+</div>

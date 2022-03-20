@@ -1,0 +1,33 @@
+<mobile-button-group
+  *ngIf="windowWidth < 700"
+  [buttons]="buttons" 
+  [activeColor]="active.color"
+  (clicked)="buttonClicked($event)"
+></mobile-button-group>
+<div class="main">
+  <div class="planet-section">
+    <div class="planet-image">
+      <img [src]="activeImage" />
+      <img *ngIf="additionalImage" class="additional-image" [src]="additionalImage" />
+    </div>
+    <div class="description-section">
+      <div class="description">
+        <h1>{{ active.name }}</h1>
+        <p>{{ activeDescription.content }}</p>
+        <span>Source: <a [href]="activeDescription.source" target="_blank">Wikipedia</a><img src="assets/images/icon-source.svg"/></span>
+      </div>
+      <button-group
+        *ngIf="windowWidth >= 700"
+        [buttons]="buttons" 
+        [activeColor]="active.color"
+        (clicked)="buttonClicked($event)"
+      ></button-group>
+    </div>
+  </div>
+  <div class="info-section">
+    <info-card title="rotation time">{{ active.rotation }}</info-card>
+    <info-card title="revolution time">{{ active.revolution }}</info-card>
+    <info-card title="radius">{{ active.radius }}</info-card>
+    <info-card title="average temp.">{{ active.temperature }}</info-card>
+  </div>
+</div>

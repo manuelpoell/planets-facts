@@ -1,0 +1,53 @@
+.info-card {
+  border: 1px solid #ffffff33;
+  width: 255px;
+  height: 128px;
+  text-transform: uppercase;
+
+  > h2 {
+    margin: 0 0 0 20px;
+  }
+
+  > h4 {
+    margin: 20px 0 5px 20px;
+    color: #ffffff80;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .info-card {
+    width: 164px;
+    height: 88px;
+
+    > h2 {
+      margin: 0 0 0 10px;
+      font-size: 24px;
+    }
+
+    > h4 {
+      margin: 10px 0 0 10px;
+      font-size: 8px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .info-card {
+    width: 327px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    > h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    > h4 {
+      margin: 0;
+      font-size: 8px;
+    }
+  }
+}

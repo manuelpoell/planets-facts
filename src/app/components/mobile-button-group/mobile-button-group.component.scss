@@ -1,0 +1,18 @@
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #ffffff33;
+
+  > .action-button {
+    text-align: center;
+    text-transform: uppercase;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    font-family: Spartan, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: #ffffff80;
+  }
+}

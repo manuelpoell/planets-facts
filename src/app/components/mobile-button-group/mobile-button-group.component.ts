@@ -1,16 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-export interface ActionButton {
-  label: string;
-  active?: boolean;
-}
+import { ActionButton } from '../button-group/button-group.component';
 
 @Component({
-  selector: 'button-group',
-  templateUrl: './button-group.component.html',
-  styleUrls: ['./button-group.component.scss']
+  selector: 'mobile-button-group',
+  templateUrl: './mobile-button-group.component.html',
+  styleUrls: ['./mobile-button-group.component.scss']
 })
-export class ButtonGroupComponent implements OnInit {
+export class MobileButtonGroupComponent implements OnInit {
 
   @Input() buttons: Array<ActionButton> = [];
   @Input() activeColor: string|undefined = '';

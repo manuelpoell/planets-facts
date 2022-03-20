@@ -1,0 +1,133 @@
+.main {
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+
+  > .planet-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 75px;
+
+    > .planet-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+
+      > .additional-image {
+        position: absolute;
+        width: 163px;
+        height: 199px;
+        top: 450px;
+      }
+    }
+
+    > .description-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      max-width: 350px;
+
+      > .description {
+        margin-bottom: 20px;
+
+        > h1 {
+          margin: 0;
+        }
+  
+        > span {
+          font-family: Spartan, sans-serif;
+          line-height: 25px;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          color: #ffffff80;
+  
+          > a {
+            color: #ffffff80;
+            font-weight: 700;
+          }
+  
+          > img {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  > .info-section {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .main {
+    width: 100%;
+    
+    > .planet-section {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+
+      > .planet-image {
+        height: 600px;
+
+        > .additional-image {
+          top: 550px;
+        }
+      }
+
+      > .description-section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        max-width: unset;
+
+        > .description {
+          margin-bottom: 0;
+          max-width: 45%;
+        }
+      }
+    }
+
+    > .info-section {
+      justify-content: space-around;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .main {
+    width: 100%;
+
+    > .planet-section {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+      text-align: center;
+
+      > .planet-image {
+
+        > img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        > .additional-image {
+          height: 100px;
+          width: auto;
+          top: 300px;
+        }
+      }
+    }
+
+    > .info-section {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

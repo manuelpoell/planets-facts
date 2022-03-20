@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PlanetInfo } from 'src/app/models/planet-info.models';
 
 @Component({
   selector: 'mp-footer',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MpFooterComponent implements OnInit {
 
-  @Input() active: any = {};
+  @Input() active: PlanetInfo = {};
 
   constructor() {}
 

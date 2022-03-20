@@ -4,7 +4,7 @@
   align-items: center;
   height: 85px;
   padding: 0 30px;
-  border-bottom: 1px solid #979797;
+  border-bottom: 1px solid #ffffff33;
 
   > .nav-bar-title {
     font-family: Antonio, sans-serif;
@@ -19,13 +19,7 @@
     display: flex;
     gap: 30px;
 
-    > .element {
-      font-family: Spartan, sans-serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 11px;
-      line-height: 25px;
-      letter-spacing: 1px;
+    > h4 {
       text-transform: uppercase;
       color: #838391;
       border-top: 3px solid transparent;
@@ -40,5 +34,19 @@
         color: #ffffff;
       }
     }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-bar {
+    height: 75px;
   }
 }
