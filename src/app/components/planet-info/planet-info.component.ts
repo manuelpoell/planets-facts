@@ -1,3 +1,4 @@
+import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { PlanetDescription } from 'src/app/models/planet-description.models';
 import { PlanetInfo } from 'src/app/models/planet-info.models';
@@ -6,7 +7,27 @@ import { ActionButton } from '../button-group/button-group.component';
 @Component({
   selector: 'planet-info',
   templateUrl: './planet-info.component.html',
-  styleUrls: ['./planet-info.component.scss']
+  styleUrls: ['./planet-info.component.scss'],
+  animations: [
+    trigger('fadeSlideInOut', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(10px)' }),
+        animate('250ms', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+      transition(':leave', [
+        animate('250ms', style({ opacity: 0, transform: 'translateY(10px)' })),
+      ])
+    ]),
+    trigger("imageFade", [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('250ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('250ms', style({ opacity: 0 })),
+      ])
+    ])
+  ]
 })
 export class PlanetInfoComponent implements OnInit {
 
@@ -21,6 +42,9 @@ export class PlanetInfoComponent implements OnInit {
   activeImage: string = '';
   additionalImage: string = '';
   activeDescription: PlanetDescription = {};
+
+  loading: boolean = false;
+  imageLoading: boolean = false;
 
   readonly windowWidth: number = window.innerWidth;
 
@@ -37,12 +61,15 @@ export class PlanetInfoComponent implements OnInit {
   }
 
   ngOnChanges(): void {
-    this.changeView();
+    if (this.windowWidth < 700) return this.changeView();
+    this.loading = true;
+    setTimeout(() => this.changeView(), 225);
   }
 
   buttonClicked(index: number): void {
     this.buttons.forEach(btn => btn.active = this.buttons.indexOf(btn) === index);
-    this.changeView();
+    this.imageLoading = true;
+    setTimeout(() => this.changeView(), 225);
   }
 
   private changeView(): void {
@@ -70,6 +97,9 @@ export class PlanetInfoComponent implements OnInit {
         this.activeDescription = this.active.overview || {};
         break;
     }
+
+    this.loading = false;
+    this.imageLoading = false;
   }
 
 }
