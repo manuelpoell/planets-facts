@@ -6,7 +6,7 @@
 ></mobile-button-group>
 <div *ngIf="!loading" class="main" @fadeSlideInOut>
   <div class="planet-section">
-    <div *ngIf="!imageLoading" class="planet-image" @imageFade>
+    <div class="planet-image">
       <img [src]="activeImage" />
       <img *ngIf="additionalImage" class="additional-image" [src]="additionalImage" />
     </div>

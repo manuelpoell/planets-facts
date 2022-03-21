@@ -17,15 +17,6 @@ import { ActionButton } from '../button-group/button-group.component';
       transition(':leave', [
         animate('250ms', style({ opacity: 0, transform: 'translateY(10px)' })),
       ])
-    ]),
-    trigger("imageFade", [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('250ms', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate('250ms', style({ opacity: 0 })),
-      ])
     ])
   ]
 })
@@ -44,7 +35,6 @@ export class PlanetInfoComponent implements OnInit {
   activeDescription: PlanetDescription = {};
 
   loading: boolean = false;
-  imageLoading: boolean = false;
 
   readonly windowWidth: number = window.innerWidth;
 
@@ -68,8 +58,7 @@ export class PlanetInfoComponent implements OnInit {
 
   buttonClicked(index: number): void {
     this.buttons.forEach(btn => btn.active = this.buttons.indexOf(btn) === index);
-    this.imageLoading = true;
-    setTimeout(() => this.changeView(), 225);
+    this.changeView();
   }
 
   private changeView(): void {
@@ -99,7 +88,6 @@ export class PlanetInfoComponent implements OnInit {
     }
 
     this.loading = false;
-    this.imageLoading = false;
   }
 
 }
