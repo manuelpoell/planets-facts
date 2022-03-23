@@ -11,11 +11,11 @@ import { ActionButton } from '../button-group/button-group.component';
   animations: [
     trigger('fadeSlideInOut', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(10px)' }),
-        animate('250ms', style({ opacity: 1, transform: 'translateY(0)' })),
+        style({ opacity: 0 }),
+        animate('250ms', style({ opacity: 1 })),
       ]),
       transition(':leave', [
-        animate('250ms', style({ opacity: 0, transform: 'translateY(10px)' })),
+        animate('250ms', style({ opacity: 0 })),
       ])
     ])
   ]

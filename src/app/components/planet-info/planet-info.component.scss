@@ -19,7 +19,7 @@
         position: absolute;
         width: 163px;
         height: 199px;
-        top: 450px;
+        top: 550px;
       }
     }
 
@@ -75,10 +75,6 @@
       > .planet-image {
         height: 600px;
         min-height: unset;
-
-        > .additional-image {
-          top: 550px;
-        }
       }
 
       > .description-section {
