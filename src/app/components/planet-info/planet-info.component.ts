@@ -1,8 +1,8 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
+import { ActionButton } from 'src/app/models/action-button.models';
 import { PlanetDescription } from 'src/app/models/planet-description.models';
 import { PlanetInfo } from 'src/app/models/planet-info.models';
-import { ActionButton } from '../button-group/button-group.component';
 
 @Component({
   selector: 'planet-info',
@@ -25,9 +25,19 @@ export class PlanetInfoComponent implements OnInit {
   @Input() active: PlanetInfo = {};
 
   buttons: Array<ActionButton> = [
-    {label: 'overview', active: true},
-    {label: 'internal structure'},
-    {label: 'surface geology'}
+    {
+      label: 'overview',
+      mobileLabel: 'overview',
+      active: true
+    },
+    {
+      label: 'internal structure',
+      mobileLabel: 'structure'
+    },
+    {
+      label: 'surface geology',
+      mobileLabel: 'surface'
+    }
   ];
 
   activeImage: string = '';
@@ -36,22 +46,13 @@ export class PlanetInfoComponent implements OnInit {
 
   loading: boolean = false;
 
-  readonly windowWidth: number = window.innerWidth;
-
   constructor() { }
 
-  ngOnInit(): void {
-    if (this.windowWidth < 700) {
-      this.buttons = [
-        {label: 'overview', active: true},
-        {label: 'structure'},
-        {label: 'surface'}
-      ];
-    }
-  }
+  ngOnInit(): void {}
 
   ngOnChanges(): void {
-    if (this.windowWidth < 700) return this.changeView();
+    // do not delay animation on mobile view
+    if (window.innerWidth < 700) return this.changeView();
     this.loading = true;
     setTimeout(() => this.changeView(), 225);
   }

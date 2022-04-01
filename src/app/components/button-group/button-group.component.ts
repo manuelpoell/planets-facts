@@ -1,9 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-export interface ActionButton {
-  label: string;
-  active?: boolean;
-}
+import { ActionButton } from 'src/app/models/action-button.models';
 
 @Component({
   selector: 'button-group',

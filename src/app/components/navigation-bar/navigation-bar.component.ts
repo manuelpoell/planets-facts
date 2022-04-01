@@ -13,8 +13,6 @@ export class NavigationBarComponent implements OnInit {
   @Output() selectionChange = new EventEmitter<string>();
   @Output() openMenu = new EventEmitter<void>();
 
-  readonly windowWidth: number = window.innerWidth;
-
   navBarElements: Array<string|undefined> = [];
   menuIsOpen: boolean = false;
 

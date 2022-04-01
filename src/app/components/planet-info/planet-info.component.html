@@ -1,5 +1,4 @@
 <mobile-button-group
-  *ngIf="windowWidth < 700"
   [buttons]="buttons" 
   [activeColor]="active.color"
   (clicked)="buttonClicked($event)"
@@ -17,7 +16,6 @@
         <span>Source: <a [href]="activeDescription.source" target="_blank">Wikipedia</a><img src="assets/images/icon-source.svg"/></span>
       </div>
       <button-group
-        *ngIf="windowWidth >= 700"
         [buttons]="buttons" 
         [activeColor]="active.color"
         (clicked)="buttonClicked($event)"

@@ -15,6 +15,10 @@
     letter-spacing: -1.05px;
   }
 
+  > .menu-burger-icon {
+    display: none;
+  }
+
   > .elements-container {
     display: flex;
     gap: 30px;
@@ -48,5 +52,13 @@
 @media (max-width: 700px) {
   .nav-bar {
     height: 75px;
+
+    > .menu-burger-icon {
+      display: unset;
+    }
+
+    > .elements-container {
+      display: none;
+    }
   }
 }

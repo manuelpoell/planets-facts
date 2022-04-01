@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActionButton } from '../button-group/button-group.component';
+import { ActionButton } from 'src/app/models/action-button.models';
 
 @Component({
   selector: 'mobile-button-group',

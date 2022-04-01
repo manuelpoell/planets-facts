@@ -1,3 +1,7 @@
+mobile-button-group {
+  display: none;
+}
+
 .main {
   width: 80%;
   margin: auto;
@@ -97,6 +101,14 @@
 }
 
 @media (max-width: 700px) {
+  mobile-button-group {
+    display: unset;
+  }
+
+  button-group {
+    display: none;
+  }
+
   .main {
     width: 100%;
 
